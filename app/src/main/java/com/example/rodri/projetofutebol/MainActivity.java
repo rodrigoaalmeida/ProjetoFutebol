@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     int substituicoesTimeB;
     int jogadoresExpulsosTimeA = 0;
     int jogadoresExpulsosTimeB = 0;
+    int contCartaoAmarelo = 0;
+    int contSubstituicao = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,19 +70,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void addCartaoAmareloTimeA(View view){
         cartaoAmareloTimeA = cartaoAmareloTimeA + 1;
+        contCartaoAmarelo += 1;
+        contSubstituicao = 0;
         if (cartaoAmareloTimeA > 1){
-            if (cartaoAmareloTimeA % 2 == 0 && substituicoesTimeA == 3){
-                jogadoresTimeA = jogadoresTimeA - 1;
-                jogadoresExpulsosTimeA = jogadoresExpulsosTimeA + 1;
-            }else if(cartaoAmareloTimeA % 4 != 0){
-                if (substituicoesTimeA == 2){
-                    jogadoresTimeA = jogadoresTimeA - 1;
-                    jogadoresExpulsosTimeA = jogadoresExpulsosTimeA + 1;
-                }else if(substituicoesTimeA == 1){
-                    jogadoresTimeA = jogadoresTimeA - 1;
-                    jogadoresExpulsosTimeA = jogadoresExpulsosTimeA + 1;
-                }
-            }else if ((cartaoAmareloTimeA - 3) % 2 == 0 && substituicoesTimeA == 0){
+            if (contCartaoAmarelo % 2 == 0 && contSubstituicao == 0){
                 jogadoresTimeA = jogadoresTimeA - 1;
                 jogadoresExpulsosTimeA = jogadoresExpulsosTimeA + 1;
             }
@@ -91,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void substituicaoTimeA(View view){
         substituicoesTimeA = substituicoesTimeA - 1;
+        contCartaoAmarelo = 0;
+        contSubstituicao = 1;
         displaySubstituicoesTimeA(substituicoesTimeA);
     }
 
