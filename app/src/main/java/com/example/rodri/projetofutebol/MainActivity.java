@@ -20,8 +20,10 @@ public class MainActivity extends AppCompatActivity {
     int substituicoesTimeB;
     int jogadoresExpulsosTimeA = 0;
     int jogadoresExpulsosTimeB = 0;
-    int contCartaoAmarelo = 0;
-    int contSubstituicao = 0;
+    int contCartaoAmareloTimeA = 0;
+    int contSubstituicaoTimeA = 0;
+    int contCartaoAmareloTimeB = 0;
+    int contSubstituicaoTimeB = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         displayCartaoVermelhoTimeA(cartaoVermelhoTimeA);
         displayCartaoAmareloTimeA(cartaoAmareloTimeA, jogadoresTimeA, jogadoresExpulsosTimeA);
         displayCartaoVermelhoTimeB(cartaoVermelhoTimeB);
-        displayCartaoAmareloTimeB(cartaoAmareloTimeB);
+        displayCartaoAmareloTimeB(cartaoAmareloTimeB, jogadoresTimeB, jogadoresExpulsosTimeB);
         displaySubstituicoesTimeA(substituicoesTimeA);
     }
 
@@ -64,39 +66,47 @@ public class MainActivity extends AppCompatActivity {
         cartaoVermelhoTimeA = cartaoVermelhoTimeA + 1;
         jogadoresTimeA = jogadoresTimeA - 1;
         jogadoresExpulsosTimeA = jogadoresExpulsosTimeA + 1;
-        jogadoresCampo(jogadoresTimeA);
+        jogadoresCampoTimeA(jogadoresTimeA);
         displayCartaoVermelhoTimeA(cartaoVermelhoTimeA, jogadoresTimeA, jogadoresExpulsosTimeA);
     }
 
     public void addCartaoAmareloTimeA(View view){
         cartaoAmareloTimeA = cartaoAmareloTimeA + 1;
-        contCartaoAmarelo += 1;
-        contSubstituicao = 0;
+        contCartaoAmareloTimeA = contCartaoAmareloTimeA + 1;
+        contSubstituicaoTimeA = 0;
         if (cartaoAmareloTimeA > 1){
-            if (contCartaoAmarelo % 2 == 0 && contSubstituicao == 0){
+            if (contCartaoAmareloTimeA % 2 == 0 && contSubstituicaoTimeA == 0){
                 jogadoresTimeA = jogadoresTimeA - 1;
                 jogadoresExpulsosTimeA = jogadoresExpulsosTimeA + 1;
             }
         }
-        jogadoresCampo(jogadoresTimeA);
+        jogadoresCampoTimeA(jogadoresTimeA);
         displayCartaoAmareloTimeA(cartaoAmareloTimeA, jogadoresTimeA, jogadoresExpulsosTimeA);
     }
 
     public void substituicaoTimeA(View view){
         substituicoesTimeA = substituicoesTimeA - 1;
-        contCartaoAmarelo = 0;
-        contSubstituicao = 1;
+        contCartaoAmareloTimeA = 0;
+        contSubstituicaoTimeA = 1;
         displaySubstituicoesTimeA(substituicoesTimeA);
+        if (substituicoesTimeA < 1){
+            Button buttonSubstituicaoTimeA = findViewById(R.id.button_substituicao_time_a);
+            buttonSubstituicaoTimeA.setEnabled(false);
+            buttonSubstituicaoTimeA.setBackground(getDrawable(R.drawable.button_invisivel));
+        }
     }
 
-    private void jogadoresCampo(int jogadores){
+    private void jogadoresCampoTimeA(int jogadores){
         if (jogadores == 6){
             Button buttonVermelhoTimeA = findViewById(R.id.button_cartao_red_time_a);
             Button buttonAmareloTimeA = findViewById(R.id.button_cartao_yellow_time_a);
+            Button buttonGolTimeA = findViewById(R.id.button_gol_time_a);
             buttonVermelhoTimeA.setEnabled(false);
             buttonAmareloTimeA.setEnabled(false);
+            buttonGolTimeA.setEnabled(false);
             buttonVermelhoTimeA.setBackground(getDrawable(R.drawable.button_invisivel));
             buttonAmareloTimeA.setBackground(getDrawable(R.drawable.button_invisivel));
+            buttonGolTimeA.setBackground(getDrawable(R.drawable.button_invisivel));
         }
     }
 
@@ -144,12 +154,50 @@ public class MainActivity extends AppCompatActivity {
 
     public void addCartaoVermelhoTimeB(View view){
         cartaoVermelhoTimeB = cartaoVermelhoTimeB + 1;
-        displayCartaoVermelhoTimeB(cartaoVermelhoTimeB);
+        jogadoresTimeB = jogadoresTimeB - 1;
+        jogadoresExpulsosTimeB = jogadoresExpulsosTimeB + 1;
+        jogadoresCampoTimeB(jogadoresTimeB);
+        displayCartaoVermelhoTimeB(cartaoVermelhoTimeB, jogadoresTimeB, jogadoresExpulsosTimeB);
     }
 
     public void addCartaoAmareloTimeB(View view){
         cartaoAmareloTimeB = cartaoAmareloTimeB + 1;
-        displayCartaoAmareloTimeB(cartaoAmareloTimeB);
+        contCartaoAmareloTimeB = contCartaoAmareloTimeB + 1;
+        contSubstituicaoTimeB = 0;
+        if (cartaoAmareloTimeB > 1){
+            if (contCartaoAmareloTimeB % 2 == 0 && contSubstituicaoTimeB == 0){
+                jogadoresTimeB = jogadoresTimeB - 1;
+                jogadoresExpulsosTimeB = jogadoresExpulsosTimeB + 1;
+            }
+        }
+        jogadoresCampoTimeB(jogadoresTimeB);
+        displayCartaoAmareloTimeB(cartaoAmareloTimeB, jogadoresTimeB, jogadoresExpulsosTimeB);
+    }
+
+    public void substituicaoTimeB(View view){
+        substituicoesTimeB = substituicoesTimeB - 1;
+        contCartaoAmareloTimeB = 0;
+        contSubstituicaoTimeB = 1;
+        displaySubstituicoesTimeB(substituicoesTimeB);
+        if (substituicoesTimeB < 1){
+            Button buttonSubstituicaoTimeB = findViewById(R.id.button_substituicao_time_b);
+            buttonSubstituicaoTimeB.setEnabled(false);
+            buttonSubstituicaoTimeB.setBackground(getDrawable(R.drawable.button_invisivel));
+        }
+    }
+
+    private void jogadoresCampoTimeB(int jogadores){
+        if (jogadores == 6){
+            Button buttonVermelhoTimeB = findViewById(R.id.button_cartao_red_time_b);
+            Button buttonAmareloTimeB = findViewById(R.id.button_cartao_yellow_time_b);
+            Button buttonGolTimeB = findViewById(R.id.button_gol_time_b);
+            buttonVermelhoTimeB.setEnabled(false);
+            buttonAmareloTimeB.setEnabled(false);
+            buttonGolTimeB.setEnabled(false);
+            buttonVermelhoTimeB.setBackground(getDrawable(R.drawable.button_invisivel));
+            buttonAmareloTimeB.setBackground(getDrawable(R.drawable.button_invisivel));
+            buttonGolTimeB.setBackground(getDrawable(R.drawable.button_invisivel));
+        }
     }
 
     public void displayPontucaoTimeB(int pontos){
@@ -157,13 +205,31 @@ public class MainActivity extends AppCompatActivity {
         pontuacaoTimeBView.setText(String.valueOf(pontos));
     }
 
+    public void displayCartaoVermelhoTimeB(int cartaoVermelho, int jogadoresCampo, int jogadoresExpulsos){
+        TextView cartaoVermelhoTimeBView = (TextView) findViewById(R.id.cartao_vermelho_time_b);
+        TextView jogadoresTimeBView = (TextView) findViewById(R.id.jogadores_campo_time_b);
+        TextView jogadoresExpulsosTimeBView = (TextView) findViewById(R.id.jogadores_expulsos_time_b);
+        jogadoresTimeBView.setText(String.valueOf(jogadoresCampo));
+        jogadoresExpulsosTimeBView.setText(String.valueOf(jogadoresExpulsos));
+        cartaoVermelhoTimeBView.setText(String.valueOf(cartaoVermelho));
+    }
+
     public void displayCartaoVermelhoTimeB(int cartaoVermelho){
         TextView cartaoVermelhoTimeBView = (TextView) findViewById(R.id.cartao_vermelho_time_b);
         cartaoVermelhoTimeBView.setText(String.valueOf(cartaoVermelho));
     }
 
-    public void displayCartaoAmareloTimeB(int cartaoAmarelo){
+    public void displayCartaoAmareloTimeB(int cartaoAmarelo, int jogadoresCampo, int jogadoresExpulsos){
         TextView cartaoAmareloTimeBView = (TextView) findViewById(R.id.cartao_amarelo_time_b);
+        TextView jogadoresTimeBView = (TextView) findViewById(R.id.jogadores_campo_time_b);
+        TextView jogadoresExpulsosTimeBView = (TextView) findViewById(R.id.jogadores_expulsos_time_b);
+        jogadoresTimeBView.setText(String.valueOf(jogadoresCampo));
+        jogadoresExpulsosTimeBView.setText(String.valueOf(jogadoresExpulsos));
         cartaoAmareloTimeBView.setText(String.valueOf(cartaoAmarelo));
+    }
+
+    private void displaySubstituicoesTimeB(int substituicao){
+        TextView substituicaoTimeBView = (TextView) findViewById(R.id.substituicoes_time_b);
+        substituicaoTimeBView.setText(String.valueOf(substituicao));
     }
 }

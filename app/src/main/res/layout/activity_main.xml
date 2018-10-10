@@ -37,6 +37,7 @@
                 android:padding="8dp"
                 android:gravity="center"/>
             <Button
+                android:id="@+id/button_gol_time_a"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:text="Gol"
@@ -154,6 +155,7 @@
                     android:paddingRight="4dp"/>
 
                 <Button
+                    android:id="@+id/button_substituicao_time_a"
                     android:text="substit."
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -223,6 +225,7 @@
                 android:padding="8dp"
                 android:gravity="center"/>
             <Button
+                android:id="@+id/button_gol_time_b"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:text="Gol"
@@ -340,12 +343,14 @@
                     android:paddingRight="4dp"/>
 
                 <Button
+                    android:id="@+id/button_substituicao_time_b"
                     android:text="substit."
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/substituicoes_time_b"
                     android:layout_below="@id/text_view_campo_b"
-                    android:layout_marginLeft="8dp"/>
+                    android:layout_marginLeft="8dp"
+                    android:onClick="substituicaoTimeB"/>
 
                 <TextView
                     android:id="@+id/text_view_expulsos_b"
