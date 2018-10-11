@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Placar futebol</string>
+    <string name="nome_time_a">time a</string>
+    <string name="nome_time_b">time b</string>
+    <string name="valor_marcadores_padrao">0</string>
+    <string name="nome_button_ponto">gol</string>
+    <string name="titulo_marcadores">jogadores</string>
+    <string name="nome_marcador_campo">Campo:</string>
+    <string name="nome_marcador_substituicao">Substit:</string>
+    <string name="nome_button_substituicao">substit.</string>
+    <string name="nome_marcador_expulsos">Expulsos:</string>
+    <string name="banner_vencedor_a">Time A Venceu!</string>
+    <string name="banner_vencedor_b">Time B Venceu!</string>
+    <string name="banner_empate">Terminou empatado!</string>
+    <string name="nome_button_reset">reset</string>
+    <string name="nome_button_fim_jogo">fim de jogo!</string>
 </resources>

@@ -11,7 +11,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="@dimen/dimen_zero_dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical">
@@ -21,30 +21,32 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
                 android:gravity="center"
-                android:paddingTop="16dp"
-                android:paddingBottom="8dp"
-                android:text="TIME A"
-                android:textSize="24sp" />
+                android:paddingTop="@dimen/distanciamento_dezesseis"
+                android:paddingBottom="@dimen/distanciamento_oito"
+                android:textAllCaps="true"
+                android:text="@string/nome_time_a"
+                android:textColor="@color/color_texto_padrao"
+                android:textSize="@dimen/size_vinte_quatro_sp" />
 
             <TextView
                 android:id="@+id/pontuacao_time_a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="8dp"
-                android:text="0"
-                android:textColor="#000000"
-                android:textSize="40sp" />
+                android:padding="@dimen/distanciamento_oito"
+                android:text="@string/valor_marcadores_padrao"
+                android:textColor="@color/color_black_padrao"
+                android:textSize="@dimen/size_quarenta_sp" />
 
             <Button
                 android:id="@+id/button_gol_time_a"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_height="@dimen/dimen_quarenta_oito"
+                android:layout_marginLeft="@dimen/distanciamento_dezesseis"
+                android:layout_marginRight="@dimen/distanciamento_dezesseis"
+                android:layout_marginBottom="@dimen/distanciamento_dezesseis"
                 android:onClick="addPontosTimeA"
-                android:text="Gol" />
+                android:text="@string/nome_button_ponto" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -52,19 +54,19 @@
 
                 <Button
                     android:id="@+id/button_cartao_red_time_a"
-                    android:layout_width="48dp"
-                    android:layout_height="36dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_width="@dimen/dimen_quarenta_oito"
+                    android:layout_height="@dimen/altura_button_falta"
+                    android:layout_marginLeft="@dimen/distanciamento_vinte"
+                    android:layout_marginRight="@dimen/distanciamento_vinte"
                     android:background="@drawable/selector_button_red"
                     android:onClick="addCartaoVermelhoTimeA" />
 
                 <Button
                     android:id="@+id/button_cartao_yellow_time_a"
-                    android:layout_width="48dp"
-                    android:layout_height="36dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_width="@dimen/dimen_quarenta_oito"
+                    android:layout_height="@dimen/altura_button_falta"
+                    android:layout_marginLeft="@dimen/distanciamento_vinte"
+                    android:layout_marginRight="@dimen/distanciamento_vinte"
                     android:layout_toRightOf="@id/button_cartao_red_time_a"
                     android:background="@drawable/selector_button_yellow"
                     android:onClick="addCartaoAmareloTimeA" />
@@ -74,11 +76,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/button_cartao_red_time_a"
-                    android:paddingLeft="32dp"
-                    android:paddingBottom="10dp"
-                    android:text="0"
-                    android:textColor="#000000"
-                    android:textSize="40sp" />
+                    android:paddingLeft="@dimen/distanciamento_trinta_dois"
+                    android:paddingBottom="@dimen/distanciamento_dez"
+                    android:text="@string/valor_marcadores_padrao"
+                    android:textColor="@color/color_black_padrao"
+                    android:textSize="@dimen/size_quarenta_sp" />
 
                 <TextView
                     android:id="@+id/cartao_amarelo_time_a"
@@ -86,11 +88,11 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/button_cartao_yellow_time_a"
                     android:layout_toRightOf="@id/button_cartao_red_time_a"
-                    android:paddingLeft="32dp"
-                    android:paddingBottom="10dp"
-                    android:text="0"
-                    android:textColor="#000000"
-                    android:textSize="40sp" />
+                    android:paddingLeft="@dimen/distanciamento_trinta_dois"
+                    android:paddingBottom="@dimen/distanciamento_dez"
+                    android:text="@string/valor_marcadores_padrao"
+                    android:textColor="@color/color_black_padrao"
+                    android:textSize="@dimen/size_quarenta_sp" />
 
             </RelativeLayout>
 
@@ -99,10 +101,11 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
                 android:gravity="center_horizontal"
-                android:padding="8dp"
-                android:text="jogadores"
+                android:padding="@dimen/distanciamento_oito"
+                android:text="@string/titulo_marcadores"
                 android:textAllCaps="true"
-                android:textSize="24sp" />
+                android:textSize="@dimen/size_vinte_quatro_sp"
+                android:textColor="@color/color_texto_padrao"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -113,10 +116,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-condensed"
-                    android:paddingLeft="4dp"
-                    android:paddingRight="4dp"
-                    android:text="Campo:"
-                    android:textSize="18sp" />
+                    android:paddingLeft="@dimen/distanciamento_quatro"
+                    android:paddingRight="@dimen/distanciamento_quatro"
+                    android:text="@string/nome_marcador_campo"
+                    android:textSize="@dimen/size_dezoito"
+                    android:textColor="@color/color_texto_padrao"/>
 
                 <TextView
                     android:id="@+id/jogadores_campo_time_a"
@@ -124,10 +128,10 @@
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/text_view_campo"
                     android:fontFamily="sans-serif"
-                    android:paddingRight="4dp"
-                    android:text="11"
-                    android:textColor="#000000"
-                    android:textSize="20sp" />
+                    android:paddingRight="@dimen/distanciamento_quatro"
+                    android:text="@string/valor_marcadores_padrao"
+                    android:textColor="@color/color_black_padrao"
+                    android:textSize="@dimen/size_vinte" />
 
                 <TextView
                     android:id="@+id/text_view_substituicoe"
@@ -135,11 +139,12 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/text_view_campo"
                     android:fontFamily="sans-serif-condensed"
-                    android:paddingLeft="4dp"
-                    android:paddingTop="10dp"
-                    android:paddingRight="4dp"
-                    android:text="Substit:"
-                    android:textSize="18sp" />
+                    android:paddingLeft="@dimen/distanciamento_quatro"
+                    android:paddingTop="@dimen/distanciamento_dez"
+                    android:paddingRight="@dimen/distanciamento_quatro"
+                    android:text="@string/nome_marcador_substituicao"
+                    android:textSize="@dimen/size_dezoito"
+                    android:textColor="@color/color_texto_padrao"/>
 
                 <TextView
                     android:id="@+id/substituicoes_time_a"
@@ -148,21 +153,21 @@
                     android:layout_below="@id/text_view_campo"
                     android:layout_toRightOf="@id/text_view_substituicoe"
                     android:fontFamily="sans-serif"
-                    android:paddingTop="10dp"
-                    android:paddingRight="4dp"
-                    android:text="3"
-                    android:textColor="#000000"
-                    android:textSize="20sp" />
+                    android:paddingTop="@dimen/distanciamento_dez"
+                    android:paddingRight="@dimen/distanciamento_quatro"
+                    android:text="@string/valor_marcadores_padrao"
+                    android:textColor="@color/color_black_padrao"
+                    android:textSize="@dimen/size_vinte" />
 
                 <Button
                     android:id="@+id/button_substituicao_time_a"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/text_view_campo"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginLeft="@dimen/distanciamento_oito"
                     android:layout_toRightOf="@id/substituicoes_time_a"
                     android:onClick="substituicaoTimeA"
-                    android:text="substit." />
+                    android:text="@string/nome_button_substituicao" />
 
                 <TextView
                     android:id="@+id/text_view_expulsos"
@@ -170,11 +175,12 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/text_view_substituicoe"
                     android:fontFamily="sans-serif-condensed"
-                    android:paddingLeft="4dp"
-                    android:paddingTop="10dp"
-                    android:paddingRight="4dp"
-                    android:text="Expulsos:"
-                    android:textSize="18sp" />
+                    android:paddingLeft="@dimen/distanciamento_quatro"
+                    android:paddingTop="@dimen/distanciamento_dez"
+                    android:paddingRight="@dimen/distanciamento_quatro"
+                    android:text="@string/nome_marcador_expulsos"
+                    android:textSize="@dimen/size_dezoito"
+                    android:textColor="@color/color_texto_padrao"/>
 
                 <TextView
                     android:id="@+id/jogadores_expulsos_time_a"
@@ -183,10 +189,10 @@
                     android:layout_below="@id/text_view_substituicoe"
                     android:layout_toRightOf="@id/text_view_expulsos"
                     android:fontFamily="sans-serif"
-                    android:paddingTop="10dp"
-                    android:text="0"
-                    android:textColor="#000000"
-                    android:textSize="20sp" />
+                    android:paddingTop="@dimen/distanciamento_dez"
+                    android:text="@string/valor_marcadores_padrao"
+                    android:textColor="@color/color_black_padrao"
+                    android:textSize="@dimen/size_vinte" />
 
             </RelativeLayout>
 
@@ -195,12 +201,12 @@
         <View
             android:layout_width="2dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/distanciamento_dezesseis"
             android:layout_weight="0"
             android:background="#757575"></View>
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="@dimen/dimen_zero_dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical">
@@ -210,30 +216,32 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
                 android:gravity="center"
-                android:paddingTop="16dp"
-                android:paddingBottom="8dp"
-                android:text="TIME B"
-                android:textSize="24sp" />
+                android:paddingTop="@dimen/distanciamento_dezesseis"
+                android:paddingBottom="@dimen/distanciamento_oito"
+                android:textAllCaps="true"
+                android:text="@string/nome_time_b"
+                android:textSize="@dimen/size_vinte_quatro_sp"
+                android:textColor="@color/color_texto_padrao"/>
 
             <TextView
                 android:id="@+id/pontuacao_time_b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="8dp"
-                android:text="0"
-                android:textColor="#000000"
-                android:textSize="40sp" />
+                android:padding="@dimen/distanciamento_oito"
+                android:text="@string/valor_marcadores_padrao"
+                android:textColor="@color/color_black_padrao"
+                android:textSize="@dimen/size_quarenta_sp" />
 
             <Button
                 android:id="@+id/button_gol_time_b"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_height="@dimen/dimen_quarenta_oito"
+                android:layout_marginLeft="@dimen/distanciamento_dezesseis"
+                android:layout_marginRight="@dimen/distanciamento_dezesseis"
+                android:layout_marginBottom="@dimen/distanciamento_dezesseis"
                 android:onClick="addPontosTimeB"
-                android:text="Gol" />
+                android:text="@string/nome_button_ponto" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -241,19 +249,19 @@
 
                 <Button
                     android:id="@+id/button_cartao_red_time_b"
-                    android:layout_width="48dp"
-                    android:layout_height="36dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_width="@dimen/dimen_quarenta_oito"
+                    android:layout_height="@dimen/altura_button_falta"
+                    android:layout_marginLeft="@dimen/distanciamento_vinte"
+                    android:layout_marginRight="@dimen/distanciamento_vinte"
                     android:background="@drawable/selector_button_red"
                     android:onClick="addCartaoVermelhoTimeB" />
 
                 <Button
                     android:id="@+id/button_cartao_yellow_time_b"
-                    android:layout_width="48dp"
-                    android:layout_height="36dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_width="@dimen/dimen_quarenta_oito"
+                    android:layout_height="@dimen/altura_button_falta"
+                    android:layout_marginLeft="@dimen/distanciamento_vinte"
+                    android:layout_marginRight="@dimen/distanciamento_vinte"
                     android:layout_toRightOf="@id/button_cartao_red_time_b"
                     android:background="@drawable/selector_button_yellow"
                     android:onClick="addCartaoAmareloTimeB" />
@@ -263,11 +271,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/button_cartao_red_time_b"
-                    android:paddingLeft="32dp"
-                    android:paddingBottom="10dp"
-                    android:text="0"
-                    android:textColor="#000000"
-                    android:textSize="40sp" />
+                    android:paddingLeft="@dimen/distanciamento_trinta_dois"
+                    android:paddingBottom="@dimen/distanciamento_dez"
+                    android:text="@string/valor_marcadores_padrao"
+                    android:textColor="@color/color_black_padrao"
+                    android:textSize="@dimen/size_quarenta_sp" />
 
                 <TextView
                     android:id="@+id/cartao_amarelo_time_b"
@@ -275,11 +283,11 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/button_cartao_yellow_time_b"
                     android:layout_toRightOf="@id/button_cartao_red_time_b"
-                    android:paddingLeft="32dp"
-                    android:paddingBottom="10dp"
-                    android:text="0"
-                    android:textColor="#000000"
-                    android:textSize="40sp" />
+                    android:paddingLeft="@dimen/distanciamento_trinta_dois"
+                    android:paddingBottom="@dimen/distanciamento_dez"
+                    android:text="@string/valor_marcadores_padrao"
+                    android:textColor="@color/color_black_padrao"
+                    android:textSize="@dimen/size_quarenta_sp" />
 
             </RelativeLayout>
 
@@ -288,10 +296,11 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
                 android:gravity="center_horizontal"
-                android:padding="8dp"
-                android:text="jogadores"
+                android:padding="@dimen/distanciamento_oito"
+                android:text="@string/titulo_marcadores"
                 android:textAllCaps="true"
-                android:textSize="24sp" />
+                android:textSize="@dimen/size_vinte_quatro_sp"
+                android:textColor="@color/color_texto_padrao"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -302,10 +311,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-condensed"
-                    android:paddingLeft="4dp"
-                    android:paddingRight="4dp"
-                    android:text="Campo:"
-                    android:textSize="18sp" />
+                    android:paddingLeft="@dimen/distanciamento_quatro"
+                    android:paddingRight="@dimen/distanciamento_quatro"
+                    android:text="@string/nome_marcador_campo"
+                    android:textSize="@dimen/size_dezoito"
+                    android:textColor="@color/color_texto_padrao"/>
 
                 <TextView
                     android:id="@+id/jogadores_campo_time_b"
@@ -313,10 +323,10 @@
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/text_view_campo_b"
                     android:fontFamily="sans-serif"
-                    android:paddingRight="4dp"
-                    android:text="11"
-                    android:textColor="#000000"
-                    android:textSize="20sp" />
+                    android:paddingRight="@dimen/distanciamento_quatro"
+                    android:text="@string/valor_marcadores_padrao"
+                    android:textColor="@color/color_black_padrao"
+                    android:textSize="@dimen/size_vinte" />
 
                 <TextView
                     android:id="@+id/text_view_substituicoe_b"
@@ -324,11 +334,12 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/text_view_campo_b"
                     android:fontFamily="sans-serif-condensed"
-                    android:paddingLeft="4dp"
-                    android:paddingTop="10dp"
-                    android:paddingRight="4dp"
-                    android:text="Substit:"
-                    android:textSize="18sp" />
+                    android:paddingLeft="@dimen/distanciamento_quatro"
+                    android:paddingTop="@dimen/distanciamento_dez"
+                    android:paddingRight="@dimen/distanciamento_quatro"
+                    android:text="@string/nome_marcador_substituicao"
+                    android:textSize="@dimen/size_dezoito"
+                    android:textColor="@color/color_texto_padrao"/>
 
                 <TextView
                     android:id="@+id/substituicoes_time_b"
@@ -337,21 +348,21 @@
                     android:layout_below="@id/text_view_campo_b"
                     android:layout_toRightOf="@id/text_view_substituicoe_b"
                     android:fontFamily="sans-serif"
-                    android:paddingTop="10dp"
-                    android:paddingRight="4dp"
-                    android:text="3"
-                    android:textColor="#000000"
-                    android:textSize="20sp" />
+                    android:paddingTop="@dimen/distanciamento_dez"
+                    android:paddingRight="@dimen/distanciamento_quatro"
+                    android:text="@string/valor_marcadores_padrao"
+                    android:textColor="@color/color_black_padrao"
+                    android:textSize="@dimen/size_vinte" />
 
                 <Button
                     android:id="@+id/button_substituicao_time_b"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/text_view_campo_b"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginLeft="@dimen/distanciamento_oito"
                     android:layout_toRightOf="@id/substituicoes_time_b"
                     android:onClick="substituicaoTimeB"
-                    android:text="substit." />
+                    android:text="@string/nome_button_substituicao" />
 
                 <TextView
                     android:id="@+id/text_view_expulsos_b"
@@ -359,11 +370,12 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/text_view_substituicoe_b"
                     android:fontFamily="sans-serif-condensed"
-                    android:paddingLeft="4dp"
-                    android:paddingTop="10dp"
-                    android:paddingRight="4dp"
-                    android:text="Expulsos:"
-                    android:textSize="18sp" />
+                    android:paddingLeft="@dimen/distanciamento_quatro"
+                    android:paddingTop="@dimen/distanciamento_dez"
+                    android:paddingRight="@dimen/distanciamento_quatro"
+                    android:text="@string/nome_marcador_expulsos"
+                    android:textSize="@dimen/size_dezoito"
+                    android:textColor="@color/color_texto_padrao"/>
 
                 <TextView
                     android:id="@+id/jogadores_expulsos_time_b"
@@ -372,10 +384,10 @@
                     android:layout_below="@id/text_view_substituicoe_b"
                     android:layout_toRightOf="@id/text_view_expulsos_b"
                     android:fontFamily="sans-serif"
-                    android:paddingTop="10dp"
-                    android:text="0"
-                    android:textColor="#000000"
-                    android:textSize="20sp" />
+                    android:paddingTop="@dimen/distanciamento_dez"
+                    android:text="@string/valor_marcadores_padrao"
+                    android:textColor="@color/color_black_padrao"
+                    android:textSize="@dimen/size_vinte" />
 
             </RelativeLayout>
 
@@ -389,13 +401,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="136dp"
-        android:background="#1B5E20"
+        android:layout_marginTop="@dimen/distancimento_banner_top"
+        android:background="@color/color_banner_vencedor"
         android:gravity="center_horizontal"
-        android:padding="16dp"
-        android:text="Time A Venceu!"
-        android:textColor="#000000"
-        android:textSize="34sp"
+        android:padding="@dimen/distanciamento_dezesseis"
+        android:text="@string/banner_vencedor_a"
+        android:textColor="@color/color_black_padrao"
+        android:textSize="@dimen/size_trinta_quatro"
         android:textStyle="bold" />
 
     <TextView
@@ -404,13 +416,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="136dp"
-        android:background="#1B5E20"
+        android:layout_marginTop="@dimen/distancimento_banner_top"
+        android:background="@color/color_banner_vencedor"
         android:gravity="center_horizontal"
-        android:padding="16dp"
-        android:text="Time B Venceu!"
-        android:textColor="#000000"
-        android:textSize="34sp"
+        android:padding="@dimen/distanciamento_dezesseis"
+        android:text="@string/banner_vencedor_b"
+        android:textColor="@color/color_black_padrao"
+        android:textSize="@dimen/size_trinta_quatro"
         android:textStyle="bold" />
 
     <TextView
@@ -419,14 +431,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="136dp"
-        android:background="#0277BD"
+        android:layout_marginTop="@dimen/distancimento_banner_top"
+        android:background="@color/color_banner_empate"
         android:gravity="center_horizontal"
-        android:padding="16dp"
-        android:text="Terminou empatado!"
+        android:padding="@dimen/distanciamento_dezesseis"
+        android:text="@string/banner_empate"
         android:textAllCaps="true"
-        android:textColor="#000000"
-        android:textSize="34sp"
+        android:textColor="@color/color_black_padrao"
+        android:textSize="@dimen/size_trinta_quatro"
         android:textStyle="bold" />
 
     <Button
@@ -434,21 +446,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="@dimen/distanciamento_cinquenta"
+        android:layout_marginRight="@dimen/distanciamento_vinte_cinco"
+        android:layout_marginBottom="@dimen/distanciamento_dezesseis"
         android:layout_toRightOf="@id/button_fim_jogo"
         android:onClick="buttonReset"
-        android:text="reset" />
+        android:text="@string/nome_button_reset" />
 
     <Button
         android:id="@+id/button_fim_jogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="50dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="@dimen/distanciamento_cinquenta"
+        android:layout_marginBottom="@dimen/distanciamento_dezesseis"
         android:onClick="buttonFimDeJogo"
-        android:text="fim de jogo!" />
+        android:text="@string/nome_button_fim_jogo" />
 
 </RelativeLayout>

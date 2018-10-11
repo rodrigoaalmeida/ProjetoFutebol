@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="altura_button_falta">36dp</dimen>
+    <dimen name="dimen_zero_dp">0dp</dimen>
+    <dimen name="dimen_quarenta_oito">48dp</dimen>
+    <dimen name="size_dezoito">18sp</dimen>
+    <dimen name="size_vinte">20sp</dimen>
+    <dimen name="size_vinte_quatro_sp">24sp</dimen>
+    <dimen name="size_trinta_quatro">34sp</dimen>
+    <dimen name="size_quarenta_sp">40sp</dimen>
+    <dimen name="distanciamento_quatro">4dp</dimen>
+    <dimen name="distanciamento_oito">8dp</dimen>
+    <dimen name="distanciamento_dez">10dp</dimen>
+    <dimen name="distanciamento_dezesseis">16dp</dimen>
+    <dimen name="distanciamento_vinte">20dp</dimen>
+    <dimen name="distanciamento_vinte_cinco">25dp</dimen>
+    <dimen name="distanciamento_trinta_dois">32dp</dimen>
+    <dimen name="distanciamento_cinquenta">50dp</dimen>
+    <dimen name="distancimento_banner_top">136dp</dimen>
+</resources>
