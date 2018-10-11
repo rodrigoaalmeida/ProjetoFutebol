@@ -36,15 +36,16 @@
                 android:textColor="#000000"
                 android:padding="8dp"
                 android:gravity="center"/>
+
             <Button
                 android:id="@+id/button_gol_time_a"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:text="Gol"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="16dp"
-                android:onClick="addPontosTimeA"/>
+                android:onClick="addPontosTimeA"
+                android:text="Gol" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -381,6 +382,35 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_view_vencedor_a"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="136dp"
+        android:background="#1B5E20"
+        android:gravity="center_horizontal"
+        android:padding="16dp"
+        android:text="Time A Venceu!"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/text_view_vencedor_b"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="136dp"
+        android:background="#1B5E20"
+        android:gravity="center_horizontal"
+        android:padding="16dp"
+        android:text="Time B Venceu!"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        android:textStyle="bold" />
 
     <Button
         android:text="reset"

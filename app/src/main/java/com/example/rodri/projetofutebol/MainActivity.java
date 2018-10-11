@@ -36,6 +36,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void buttonReset(View view){
+        Button buttonGolTimeA = findViewById(R.id.button_gol_time_a);
+        Button buttonVermelhoTimeA = findViewById(R.id.button_cartao_red_time_a);
+        Button buttonAmareloTimeA = findViewById(R.id.button_cartao_yellow_time_a);
+        Button buttonSubstituicaoTimeA = findViewById(R.id.button_substituicao_time_a);
+        Button buttonGolTimeB = findViewById(R.id.button_gol_time_b);
+        Button buttonVermelhoTimeB = findViewById(R.id.button_cartao_red_time_b);
+        Button buttonAmareloTimeB = findViewById(R.id.button_cartao_yellow_time_b);
+        Button buttonSubstituicaoTimeB = findViewById(R.id.button_substituicao_time_b);
         pontucaoTimeA = 0;
         pontucaoTimeB = 0;
         cartaoVermelhoTimeA = 0;
@@ -48,6 +56,22 @@ public class MainActivity extends AppCompatActivity {
         jogadoresTimeB = 11;
         substituicoesTimeA = 3;
         substituicoesTimeB = 3;
+        buttonGolTimeA.setEnabled(true);
+        buttonVermelhoTimeA.setEnabled(true);
+        buttonAmareloTimeA.setEnabled(true);
+        buttonSubstituicaoTimeA.setEnabled(true);
+        buttonGolTimeA.setVisibility(View.VISIBLE);
+        buttonVermelhoTimeA.setVisibility(View.VISIBLE);
+        buttonAmareloTimeA.setVisibility(View.VISIBLE);
+        buttonSubstituicaoTimeA.setVisibility(View.VISIBLE);
+        buttonGolTimeB.setEnabled(true);
+        buttonVermelhoTimeB.setEnabled(true);
+        buttonAmareloTimeB.setEnabled(true);
+        buttonSubstituicaoTimeB.setEnabled(true);
+        buttonGolTimeB.setVisibility(View.VISIBLE);
+        buttonVermelhoTimeB.setVisibility(View.VISIBLE);
+        buttonAmareloTimeB.setVisibility(View.VISIBLE);
+        buttonSubstituicaoTimeB.setVisibility(View.VISIBLE);
         displayPontucaoTimeA(pontucaoTimeA);
         displayPontucaoTimeB(pontucaoTimeB);
         displayCartaoVermelhoTimeA(cartaoVermelhoTimeA);
@@ -55,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
         displayCartaoVermelhoTimeB(cartaoVermelhoTimeB);
         displayCartaoAmareloTimeB(cartaoAmareloTimeB, jogadoresTimeB, jogadoresExpulsosTimeB);
         displaySubstituicoesTimeA(substituicoesTimeA);
+        displaySubstituicoesTimeB(substituicoesTimeB);
     }
 
     public void addPontosTimeA(View view){
@@ -92,21 +117,21 @@ public class MainActivity extends AppCompatActivity {
         if (substituicoesTimeA < 1){
             Button buttonSubstituicaoTimeA = findViewById(R.id.button_substituicao_time_a);
             buttonSubstituicaoTimeA.setEnabled(false);
-            buttonSubstituicaoTimeA.setBackground(getDrawable(R.drawable.button_invisivel));
+            buttonSubstituicaoTimeA.setVisibility(View.INVISIBLE);
         }
     }
 
     private void jogadoresCampoTimeA(int jogadores){
         if (jogadores == 6){
+            Button buttonGolTimeA = findViewById(R.id.button_gol_time_a);
             Button buttonVermelhoTimeA = findViewById(R.id.button_cartao_red_time_a);
             Button buttonAmareloTimeA = findViewById(R.id.button_cartao_yellow_time_a);
-            Button buttonGolTimeA = findViewById(R.id.button_gol_time_a);
             buttonVermelhoTimeA.setEnabled(false);
             buttonAmareloTimeA.setEnabled(false);
             buttonGolTimeA.setEnabled(false);
-            buttonVermelhoTimeA.setBackground(getDrawable(R.drawable.button_invisivel));
-            buttonAmareloTimeA.setBackground(getDrawable(R.drawable.button_invisivel));
-            buttonGolTimeA.setBackground(getDrawable(R.drawable.button_invisivel));
+            buttonGolTimeA.setVisibility(View.INVISIBLE);
+            buttonVermelhoTimeA.setVisibility(View.INVISIBLE);
+            buttonAmareloTimeA.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -182,21 +207,21 @@ public class MainActivity extends AppCompatActivity {
         if (substituicoesTimeB < 1){
             Button buttonSubstituicaoTimeB = findViewById(R.id.button_substituicao_time_b);
             buttonSubstituicaoTimeB.setEnabled(false);
-            buttonSubstituicaoTimeB.setBackground(getDrawable(R.drawable.button_invisivel));
+            buttonSubstituicaoTimeB.setVisibility(View.INVISIBLE);
         }
     }
 
     private void jogadoresCampoTimeB(int jogadores){
         if (jogadores == 6){
+            Button buttonGolTimeB = findViewById(R.id.button_gol_time_b);
             Button buttonVermelhoTimeB = findViewById(R.id.button_cartao_red_time_b);
             Button buttonAmareloTimeB = findViewById(R.id.button_cartao_yellow_time_b);
-            Button buttonGolTimeB = findViewById(R.id.button_gol_time_b);
             buttonVermelhoTimeB.setEnabled(false);
             buttonAmareloTimeB.setEnabled(false);
             buttonGolTimeB.setEnabled(false);
-            buttonVermelhoTimeB.setBackground(getDrawable(R.drawable.button_invisivel));
-            buttonAmareloTimeB.setBackground(getDrawable(R.drawable.button_invisivel));
-            buttonGolTimeB.setBackground(getDrawable(R.drawable.button_invisivel));
+            buttonVermelhoTimeB.setVisibility(View.INVISIBLE);
+            buttonAmareloTimeB.setVisibility(View.INVISIBLE);
+            buttonGolTimeB.setVisibility(View.INVISIBLE);
         }
     }
 
