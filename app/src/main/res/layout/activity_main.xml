@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,30 +11,30 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TIME A"
-                android:textSize="24sp"
                 android:fontFamily="sans-serif-condensed"
+                android:gravity="center"
                 android:paddingTop="16dp"
                 android:paddingBottom="8dp"
-                android:gravity="center"/>
+                android:text="TIME A"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/pontuacao_time_a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="0"
-                android:textSize="40sp"
-                android:textColor="#000000"
+                android:gravity="center"
                 android:padding="8dp"
-                android:gravity="center"/>
+                android:text="0"
+                android:textColor="#000000"
+                android:textSize="40sp" />
 
             <Button
                 android:id="@+id/button_gol_time_a"
@@ -57,8 +56,8 @@
                     android:layout_height="36dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:background="@drawable/button_red"
-                    android:onClick="addCartaoVermelhoTimeA"/>
+                    android:background="@drawable/selector_button_red"
+                    android:onClick="addCartaoVermelhoTimeA" />
 
                 <Button
                     android:id="@+id/button_cartao_yellow_time_a"
@@ -67,43 +66,43 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_toRightOf="@id/button_cartao_red_time_a"
-                    android:background="@drawable/selector_button"
-                    android:onClick="addCartaoAmareloTimeA"/>
+                    android:background="@drawable/selector_button_yellow"
+                    android:onClick="addCartaoAmareloTimeA" />
 
                 <TextView
                     android:id="@+id/cartao_vermelho_time_a"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="40sp"
-                    android:textColor="#000000"
+                    android:layout_below="@id/button_cartao_red_time_a"
                     android:paddingLeft="32dp"
                     android:paddingBottom="10dp"
-                    android:layout_below="@id/button_cartao_red_time_a"/>
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="40sp" />
 
                 <TextView
                     android:id="@+id/cartao_amarelo_time_a"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="40sp"
-                    android:textColor="#000000"
+                    android:layout_below="@id/button_cartao_yellow_time_a"
+                    android:layout_toRightOf="@id/button_cartao_red_time_a"
                     android:paddingLeft="32dp"
                     android:paddingBottom="10dp"
-                    android:layout_below="@id/button_cartao_yellow_time_a"
-                    android:layout_toRightOf="@id/button_cartao_red_time_a"/>
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="40sp" />
 
             </RelativeLayout>
 
             <TextView
-                android:text="jogadores"
-                android:textAllCaps="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="24sp"
                 android:fontFamily="sans-serif-condensed"
+                android:gravity="center_horizontal"
                 android:padding="8dp"
-                android:gravity="center_horizontal"/>
+                android:text="jogadores"
+                android:textAllCaps="true"
+                android:textSize="24sp" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -111,129 +110,130 @@
 
                 <TextView
                     android:id="@+id/text_view_campo"
-                    android:text="Campo:"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18sp"
                     android:fontFamily="sans-serif-condensed"
                     android:paddingLeft="4dp"
-                    android:paddingRight="4dp"/>
+                    android:paddingRight="4dp"
+                    android:text="Campo:"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/jogadores_campo_time_a"
-                    android:text="11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/text_view_campo"
-                    android:textSize="20sp"
-                    android:textColor="#000000"
                     android:fontFamily="sans-serif"
-                    android:paddingRight="4dp"/>
+                    android:paddingRight="4dp"
+                    android:text="11"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/text_view_substituicoe"
-                    android:text="Substit:"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/text_view_campo"
-                    android:textSize="18sp"
                     android:fontFamily="sans-serif-condensed"
                     android:paddingLeft="4dp"
                     android:paddingTop="10dp"
-                    android:paddingRight="4dp"/>
+                    android:paddingRight="4dp"
+                    android:text="Substit:"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/substituicoes_time_a"
-                    android:text="3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/text_view_substituicoe"
                     android:layout_below="@id/text_view_campo"
-                    android:textSize="20sp"
-                    android:textColor="#000000"
+                    android:layout_toRightOf="@id/text_view_substituicoe"
                     android:fontFamily="sans-serif"
                     android:paddingTop="10dp"
-                    android:paddingRight="4dp"/>
+                    android:paddingRight="4dp"
+                    android:text="3"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
 
                 <Button
                     android:id="@+id/button_substituicao_time_a"
-                    android:text="substit."
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/substituicoes_time_a"
                     android:layout_below="@id/text_view_campo"
                     android:layout_marginLeft="8dp"
-                    android:onClick="substituicaoTimeA"/>
+                    android:layout_toRightOf="@id/substituicoes_time_a"
+                    android:onClick="substituicaoTimeA"
+                    android:text="substit." />
 
                 <TextView
                     android:id="@+id/text_view_expulsos"
-                    android:text="Expulsos:"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/text_view_substituicoe"
-                    android:textSize="18sp"
                     android:fontFamily="sans-serif-condensed"
                     android:paddingLeft="4dp"
                     android:paddingTop="10dp"
-                    android:paddingRight="4dp"/>
+                    android:paddingRight="4dp"
+                    android:text="Expulsos:"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/jogadores_expulsos_time_a"
-                    android:text="0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/text_view_expulsos"
                     android:layout_below="@id/text_view_substituicoe"
-                    android:textSize="20sp"
-                    android:textColor="#000000"
+                    android:layout_toRightOf="@id/text_view_expulsos"
                     android:fontFamily="sans-serif"
-                    android:paddingTop="10dp"/>
+                    android:paddingTop="10dp"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
 
             </RelativeLayout>
 
         </LinearLayout>
 
         <View
-            android:layout_weight="0"
             android:layout_width="2dp"
             android:layout_height="match_parent"
-            android:background="#757575"
-            android:layout_marginTop="16dp"></View>
+            android:layout_marginTop="16dp"
+            android:layout_weight="0"
+            android:background="#757575"></View>
 
         <LinearLayout
-            android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TIME B"
-                android:textSize="24sp"
                 android:fontFamily="sans-serif-condensed"
+                android:gravity="center"
                 android:paddingTop="16dp"
                 android:paddingBottom="8dp"
-                android:gravity="center"/>
+                android:text="TIME B"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/pontuacao_time_b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="0"
-                android:textSize="40sp"
-                android:textColor="#000000"
+                android:gravity="center"
                 android:padding="8dp"
-                android:gravity="center"/>
+                android:text="0"
+                android:textColor="#000000"
+                android:textSize="40sp" />
+
             <Button
                 android:id="@+id/button_gol_time_b"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:text="Gol"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="16dp"
-                android:onClick="addPontosTimeB"/>
+                android:onClick="addPontosTimeB"
+                android:text="Gol" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -245,8 +245,8 @@
                     android:layout_height="36dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:background="@drawable/button_red"
-                    android:onClick="addCartaoVermelhoTimeB"/>
+                    android:background="@drawable/selector_button_red"
+                    android:onClick="addCartaoVermelhoTimeB" />
 
                 <Button
                     android:id="@+id/button_cartao_yellow_time_b"
@@ -255,43 +255,43 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_toRightOf="@id/button_cartao_red_time_b"
-                    android:background="@drawable/button_yellow"
-                    android:onClick="addCartaoAmareloTimeB"/>
+                    android:background="@drawable/selector_button_yellow"
+                    android:onClick="addCartaoAmareloTimeB" />
 
                 <TextView
                     android:id="@+id/cartao_vermelho_time_b"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="40sp"
-                    android:textColor="#000000"
+                    android:layout_below="@id/button_cartao_red_time_b"
                     android:paddingLeft="32dp"
                     android:paddingBottom="10dp"
-                    android:layout_below="@id/button_cartao_red_time_b"/>
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="40sp" />
 
                 <TextView
                     android:id="@+id/cartao_amarelo_time_b"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="40sp"
-                    android:textColor="#000000"
+                    android:layout_below="@id/button_cartao_yellow_time_b"
+                    android:layout_toRightOf="@id/button_cartao_red_time_b"
                     android:paddingLeft="32dp"
                     android:paddingBottom="10dp"
-                    android:layout_below="@id/button_cartao_yellow_time_b"
-                    android:layout_toRightOf="@id/button_cartao_red_time_b"/>
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="40sp" />
 
             </RelativeLayout>
 
             <TextView
-                android:text="jogadores"
-                android:textAllCaps="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="24sp"
                 android:fontFamily="sans-serif-condensed"
+                android:gravity="center_horizontal"
                 android:padding="8dp"
-                android:gravity="center_horizontal"/>
+                android:text="jogadores"
+                android:textAllCaps="true"
+                android:textSize="24sp" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -299,83 +299,83 @@
 
                 <TextView
                     android:id="@+id/text_view_campo_b"
-                    android:text="Campo:"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18sp"
                     android:fontFamily="sans-serif-condensed"
                     android:paddingLeft="4dp"
-                    android:paddingRight="4dp"/>
+                    android:paddingRight="4dp"
+                    android:text="Campo:"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/jogadores_campo_time_b"
-                    android:text="11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/text_view_campo_b"
-                    android:textSize="20sp"
-                    android:textColor="#000000"
                     android:fontFamily="sans-serif"
-                    android:paddingRight="4dp"/>
+                    android:paddingRight="4dp"
+                    android:text="11"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/text_view_substituicoe_b"
-                    android:text="Substit:"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/text_view_campo_b"
-                    android:textSize="18sp"
                     android:fontFamily="sans-serif-condensed"
                     android:paddingLeft="4dp"
                     android:paddingTop="10dp"
-                    android:paddingRight="4dp"/>
+                    android:paddingRight="4dp"
+                    android:text="Substit:"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/substituicoes_time_b"
-                    android:text="3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/text_view_substituicoe_b"
                     android:layout_below="@id/text_view_campo_b"
-                    android:textSize="20sp"
-                    android:textColor="#000000"
+                    android:layout_toRightOf="@id/text_view_substituicoe_b"
                     android:fontFamily="sans-serif"
                     android:paddingTop="10dp"
-                    android:paddingRight="4dp"/>
+                    android:paddingRight="4dp"
+                    android:text="3"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
 
                 <Button
                     android:id="@+id/button_substituicao_time_b"
-                    android:text="substit."
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/substituicoes_time_b"
                     android:layout_below="@id/text_view_campo_b"
                     android:layout_marginLeft="8dp"
-                    android:onClick="substituicaoTimeB"/>
+                    android:layout_toRightOf="@id/substituicoes_time_b"
+                    android:onClick="substituicaoTimeB"
+                    android:text="substit." />
 
                 <TextView
                     android:id="@+id/text_view_expulsos_b"
-                    android:text="Expulsos:"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/text_view_substituicoe_b"
-                    android:textSize="18sp"
                     android:fontFamily="sans-serif-condensed"
                     android:paddingLeft="4dp"
                     android:paddingTop="10dp"
-                    android:paddingRight="4dp"/>
+                    android:paddingRight="4dp"
+                    android:text="Expulsos:"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/jogadores_expulsos_time_b"
-                    android:text="0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/text_view_expulsos_b"
                     android:layout_below="@id/text_view_substituicoe_b"
-                    android:textSize="20sp"
-                    android:textColor="#000000"
+                    android:layout_toRightOf="@id/text_view_expulsos_b"
                     android:fontFamily="sans-serif"
-                    android:paddingTop="10dp"/>
+                    android:paddingTop="10dp"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
 
             </RelativeLayout>
 
@@ -397,6 +397,7 @@
         android:textColor="#000000"
         android:textSize="34sp"
         android:textStyle="bold" />
+
     <TextView
         android:id="@+id/text_view_vencedor_b"
         android:layout_width="match_parent"
@@ -430,24 +431,24 @@
 
     <Button
         android:id="@+id/button_reset"
-        android:text="reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@id/button_fim_jogo"
         android:layout_marginLeft="50dp"
-        android:layout_marginBottom="16dp"
         android:layout_marginRight="25dp"
-        android:onClick="buttonReset"/>
+        android:layout_marginBottom="16dp"
+        android:layout_toRightOf="@id/button_fim_jogo"
+        android:onClick="buttonReset"
+        android:text="reset" />
 
     <Button
         android:id="@+id/button_fim_jogo"
-        android:text="fim de jogo!"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="50dp"
         android:layout_marginBottom="16dp"
-        android:onClick="buttonFimDeJogo"/>
+        android:onClick="buttonFimDeJogo"
+        android:text="fim de jogo!" />
 
 </RelativeLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Fonte do codigo: http://respostas.guj.com.br/24996-mudando-a-cor-do-botao-e-mostrar-evidente-o-click-->
+<!--Fonte do codigo: http://respostas.guj.com.br/9760-botao-com-efeito-de-pressionado-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--Nesse caso o terceiro atributo não foi usado porque não apricou mudança visivel-->
+    <item android:drawable="@drawable/button_yellow_2" android:state_pressed="true"/>
+    <item android:drawable="@drawable/button_yellow"/>
+    <!-- Fonte dos comentarios: https://www.tutorialspoint.com/pg/xml/xml_comments.htm -->
+    <!-- Todos os comentarios no .xml foram feitos com base no link acima-->
+</selector>

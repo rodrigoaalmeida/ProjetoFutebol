@@ -4,7 +4,7 @@
     android:shape="rectangle">
     <!-- Dos tres atributos citados na fonte só esses dois foram usados -->
     <corners android:radius="8dp"/>
-    <solid android:color="#FDD835"/>
+    <solid android:color="#EF5350"/>
     <!-- Fonte dos comentarios: https://www.tutorialspoint.com/pg/xml/xml_comments.htm -->
     <!-- Todos os comentarios no .xml foram feitos com base no link acima-->
 </shape>

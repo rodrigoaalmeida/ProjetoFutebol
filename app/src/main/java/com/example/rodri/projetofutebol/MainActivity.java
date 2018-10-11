@@ -1,5 +1,7 @@
 package com.example.rodri.projetofutebol;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -42,6 +44,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        /**
+         * Fonte do codigo de mudança de cor da ActionBar: https://pt.stackoverflow.com/questions/45263/mudando-cor-da-actionbar-no-style
+         * */
+        android.support.v7.app.ActionBar bar = getSupportActionBar();
+        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#EF6C00")));
         displayPontucaoTimeA(pontucaoTimeA);
         displayPontucaoTimeB(pontucaoTimeB);
         displayCartaoVermelhoTimeA(cartaoVermelhoTimeA);
@@ -56,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         empateView.setVisibility(View.INVISIBLE);
     }
 
-    private void atribuirComponentesAsVariaveis(){
+    private void atribuirComponentesAsVariaveis() {
         //definição de componente
         empateView = (TextView) findViewById(R.id.text_view_empate);
         vencedorTimeAView = (TextView) findViewById(R.id.text_view_vencedor_a);
@@ -72,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         buttonFimDeJogoView = findViewById(R.id.button_fim_jogo);
     }
 
-    public void buttonReset(View view){
+    public void buttonReset(View view) {
         pontucaoTimeA = 0;
         pontucaoTimeB = 0;
         cartaoVermelhoTimeA = 0;
@@ -116,20 +123,20 @@ public class MainActivity extends AppCompatActivity {
         buttonFimDeJogoView.setVisibility(View.VISIBLE);
     }
 
-    public void buttonFimDeJogo(View view){
-        if (pontucaoTimeA > pontucaoTimeB){
+    public void buttonFimDeJogo(View view) {
+        if (pontucaoTimeA > pontucaoTimeB) {
             vencedorTimeAView.setVisibility(View.VISIBLE);
             situacaoButtonJogoEncerrado();
-        }else if (pontucaoTimeB > pontucaoTimeA){
+        } else if (pontucaoTimeB > pontucaoTimeA) {
             vencedorTimeBView.setVisibility(View.VISIBLE);
             situacaoButtonJogoEncerrado();
-        }else {
+        } else {
             empateView.setVisibility(View.VISIBLE);
             situacaoButtonJogoEncerrado();
         }
     }
 
-    private void situacaoButtonJogoEncerrado(){
+    private void situacaoButtonJogoEncerrado() {
         buttonFimDeJogoView.setEnabled(false);
         buttonFimDeJogoView.setVisibility(View.INVISIBLE);
         buttonVermelhoTimeA.setEnabled(false);
@@ -150,12 +157,12 @@ public class MainActivity extends AppCompatActivity {
         buttonSubstituicaoTimeB.setVisibility(View.INVISIBLE);
     }
 
-    public void addPontosTimeA(View view){
+    public void addPontosTimeA(View view) {
         pontucaoTimeA = pontucaoTimeA + 1;
         displayPontucaoTimeA(pontucaoTimeA);
     }
 
-    public void addCartaoVermelhoTimeA(View view){
+    public void addCartaoVermelhoTimeA(View view) {
         cartaoVermelhoTimeA = cartaoVermelhoTimeA + 1;
         jogadoresTimeA = jogadoresTimeA - 1;
         jogadoresExpulsosTimeA = jogadoresExpulsosTimeA + 1;
@@ -163,12 +170,12 @@ public class MainActivity extends AppCompatActivity {
         displayCartaoVermelhoTimeA(cartaoVermelhoTimeA, jogadoresTimeA, jogadoresExpulsosTimeA);
     }
 
-    public void addCartaoAmareloTimeA(View view){
+    public void addCartaoAmareloTimeA(View view) {
         cartaoAmareloTimeA = cartaoAmareloTimeA + 1;
         contCartaoAmareloTimeA = contCartaoAmareloTimeA + 1;
         contSubstituicaoTimeA = 0;
-        if (cartaoAmareloTimeA > 1){
-            if (contCartaoAmareloTimeA % 2 == 0 && contSubstituicaoTimeA == 0){
+        if (cartaoAmareloTimeA > 1) {
+            if (contCartaoAmareloTimeA % 2 == 0 && contSubstituicaoTimeA == 0) {
                 jogadoresTimeA = jogadoresTimeA - 1;
                 jogadoresExpulsosTimeA = jogadoresExpulsosTimeA + 1;
             }
@@ -177,30 +184,30 @@ public class MainActivity extends AppCompatActivity {
         displayCartaoAmareloTimeA(cartaoAmareloTimeA, jogadoresTimeA, jogadoresExpulsosTimeA);
     }
 
-    public void substituicaoTimeA(View view){
+    public void substituicaoTimeA(View view) {
         substituicoesTimeA = substituicoesTimeA - 1;
         contCartaoAmareloTimeA = 0;
         contSubstituicaoTimeA = 1;
         displaySubstituicoesTimeA(substituicoesTimeA);
-        if (substituicoesTimeA < 1){
+        if (substituicoesTimeA < 1) {
             buttonSubstituicaoTimeA.setEnabled(false);
             buttonSubstituicaoTimeA.setVisibility(View.INVISIBLE);
         }
     }
 
-    private void jogadoresCampoTimeA(int jogadores){
-        if (jogadores == 6){
+    private void jogadoresCampoTimeA(int jogadores) {
+        if (jogadores == 6) {
             situacaoButtonJogoEncerrado();
             vencedorTimeBView.setVisibility(View.VISIBLE);
         }
     }
 
-    public void displayPontucaoTimeA(int pontos){
+    public void displayPontucaoTimeA(int pontos) {
         TextView pontuacaoTimeAView = (TextView) findViewById(R.id.pontuacao_time_a);
         pontuacaoTimeAView.setText(String.valueOf(pontos));
     }
 
-    public void displayCartaoVermelhoTimeA(int cartaoVermelho, int jogadoresCampo, int jogadoresExpulsos){
+    public void displayCartaoVermelhoTimeA(int cartaoVermelho, int jogadoresCampo, int jogadoresExpulsos) {
         TextView cartaoVermelhoTimeAView = (TextView) findViewById(R.id.cartao_vermelho_time_a);
         TextView jogadoresTimeAView = (TextView) findViewById(R.id.jogadores_campo_time_a);
         TextView jogadoresExpulsosTimeAView = (TextView) findViewById(R.id.jogadores_expulsos_time_a);
@@ -209,12 +216,12 @@ public class MainActivity extends AppCompatActivity {
         cartaoVermelhoTimeAView.setText(String.valueOf(cartaoVermelho));
     }
 
-    public void displayCartaoVermelhoTimeA(int cartaoVermelho){
+    public void displayCartaoVermelhoTimeA(int cartaoVermelho) {
         TextView cartaoVermelhoTimeAView = (TextView) findViewById(R.id.cartao_vermelho_time_a);
         cartaoVermelhoTimeAView.setText(String.valueOf(cartaoVermelho));
     }
 
-    public void displayCartaoAmareloTimeA(int cartaoAmarelo, int jogadoresCampo, int jogadoresExpulsos){
+    public void displayCartaoAmareloTimeA(int cartaoAmarelo, int jogadoresCampo, int jogadoresExpulsos) {
         TextView cartaoAmareloTimeAView = (TextView) findViewById(R.id.cartao_amarelo_time_a);
         TextView jogadoresTimeAView = (TextView) findViewById(R.id.jogadores_campo_time_a);
         TextView jogadoresExpulsosTimeAView = (TextView) findViewById(R.id.jogadores_expulsos_time_a);
@@ -223,21 +230,21 @@ public class MainActivity extends AppCompatActivity {
         cartaoAmareloTimeAView.setText(String.valueOf(cartaoAmarelo));
     }
 
-    private void displaySubstituicoesTimeA(int substituicao){
+    private void displaySubstituicoesTimeA(int substituicao) {
         TextView substituicaoTimeAView = (TextView) findViewById(R.id.substituicoes_time_a);
         substituicaoTimeAView.setText(String.valueOf(substituicao));
     }
 
     /**
      * time b
-     * */
+     */
 
-    public void addPontosTimeB(View view){
+    public void addPontosTimeB(View view) {
         pontucaoTimeB = pontucaoTimeB + 1;
         displayPontucaoTimeB(pontucaoTimeB);
     }
 
-    public void addCartaoVermelhoTimeB(View view){
+    public void addCartaoVermelhoTimeB(View view) {
         cartaoVermelhoTimeB = cartaoVermelhoTimeB + 1;
         jogadoresTimeB = jogadoresTimeB - 1;
         jogadoresExpulsosTimeB = jogadoresExpulsosTimeB + 1;
@@ -245,12 +252,12 @@ public class MainActivity extends AppCompatActivity {
         displayCartaoVermelhoTimeB(cartaoVermelhoTimeB, jogadoresTimeB, jogadoresExpulsosTimeB);
     }
 
-    public void addCartaoAmareloTimeB(View view){
+    public void addCartaoAmareloTimeB(View view) {
         cartaoAmareloTimeB = cartaoAmareloTimeB + 1;
         contCartaoAmareloTimeB = contCartaoAmareloTimeB + 1;
         contSubstituicaoTimeB = 0;
-        if (cartaoAmareloTimeB > 1){
-            if (contCartaoAmareloTimeB % 2 == 0 && contSubstituicaoTimeB == 0){
+        if (cartaoAmareloTimeB > 1) {
+            if (contCartaoAmareloTimeB % 2 == 0 && contSubstituicaoTimeB == 0) {
                 jogadoresTimeB = jogadoresTimeB - 1;
                 jogadoresExpulsosTimeB = jogadoresExpulsosTimeB + 1;
             }
@@ -259,30 +266,30 @@ public class MainActivity extends AppCompatActivity {
         displayCartaoAmareloTimeB(cartaoAmareloTimeB, jogadoresTimeB, jogadoresExpulsosTimeB);
     }
 
-    public void substituicaoTimeB(View view){
+    public void substituicaoTimeB(View view) {
         substituicoesTimeB = substituicoesTimeB - 1;
         contCartaoAmareloTimeB = 0;
         contSubstituicaoTimeB = 1;
         displaySubstituicoesTimeB(substituicoesTimeB);
-        if (substituicoesTimeB < 1){
+        if (substituicoesTimeB < 1) {
             buttonSubstituicaoTimeB.setEnabled(false);
             buttonSubstituicaoTimeB.setVisibility(View.INVISIBLE);
         }
     }
 
-    private void jogadoresCampoTimeB(int jogadores){
-        if (jogadores == 6){
+    private void jogadoresCampoTimeB(int jogadores) {
+        if (jogadores == 6) {
             situacaoButtonJogoEncerrado();
             vencedorTimeAView.setVisibility(View.VISIBLE);
         }
     }
 
-    public void displayPontucaoTimeB(int pontos){
+    public void displayPontucaoTimeB(int pontos) {
         TextView pontuacaoTimeBView = (TextView) findViewById(R.id.pontuacao_time_b);
         pontuacaoTimeBView.setText(String.valueOf(pontos));
     }
 
-    public void displayCartaoVermelhoTimeB(int cartaoVermelho, int jogadoresCampo, int jogadoresExpulsos){
+    public void displayCartaoVermelhoTimeB(int cartaoVermelho, int jogadoresCampo, int jogadoresExpulsos) {
         TextView cartaoVermelhoTimeBView = (TextView) findViewById(R.id.cartao_vermelho_time_b);
         TextView jogadoresTimeBView = (TextView) findViewById(R.id.jogadores_campo_time_b);
         TextView jogadoresExpulsosTimeBView = (TextView) findViewById(R.id.jogadores_expulsos_time_b);
@@ -291,12 +298,12 @@ public class MainActivity extends AppCompatActivity {
         cartaoVermelhoTimeBView.setText(String.valueOf(cartaoVermelho));
     }
 
-    public void displayCartaoVermelhoTimeB(int cartaoVermelho){
+    public void displayCartaoVermelhoTimeB(int cartaoVermelho) {
         TextView cartaoVermelhoTimeBView = (TextView) findViewById(R.id.cartao_vermelho_time_b);
         cartaoVermelhoTimeBView.setText(String.valueOf(cartaoVermelho));
     }
 
-    public void displayCartaoAmareloTimeB(int cartaoAmarelo, int jogadoresCampo, int jogadoresExpulsos){
+    public void displayCartaoAmareloTimeB(int cartaoAmarelo, int jogadoresCampo, int jogadoresExpulsos) {
         TextView cartaoAmareloTimeBView = (TextView) findViewById(R.id.cartao_amarelo_time_b);
         TextView jogadoresTimeBView = (TextView) findViewById(R.id.jogadores_campo_time_b);
         TextView jogadoresExpulsosTimeBView = (TextView) findViewById(R.id.jogadores_expulsos_time_b);
@@ -305,7 +312,7 @@ public class MainActivity extends AppCompatActivity {
         cartaoAmareloTimeBView.setText(String.valueOf(cartaoAmarelo));
     }
 
-    private void displaySubstituicoesTimeB(int substituicao){
+    private void displaySubstituicoesTimeB(int substituicao) {
         TextView substituicaoTimeBView = (TextView) findViewById(R.id.substituicoes_time_b);
         substituicaoTimeBView.setText(String.valueOf(substituicao));
     }
