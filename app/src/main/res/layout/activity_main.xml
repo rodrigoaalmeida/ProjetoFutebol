@@ -67,7 +67,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_toRightOf="@id/button_cartao_red_time_a"
-                    android:background="@drawable/button_yellow"
+                    android:background="@drawable/selector_button"
                     android:onClick="addCartaoAmareloTimeA"/>
 
                 <TextView
@@ -412,12 +412,42 @@
         android:textSize="34sp"
         android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/text_view_empate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="136dp"
+        android:background="#0277BD"
+        android:gravity="center_horizontal"
+        android:padding="16dp"
+        android:text="Terminou empatado!"
+        android:textAllCaps="true"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
     <Button
+        android:id="@+id/button_reset"
         android:text="reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@id/button_fim_jogo"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="25dp"
         android:onClick="buttonReset"/>
+
+    <Button
+        android:id="@+id/button_fim_jogo"
+        android:text="fim de jogo!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="buttonFimDeJogo"/>
 
 </RelativeLayout>
