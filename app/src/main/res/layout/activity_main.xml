@@ -23,8 +23,8 @@
                 android:gravity="center"
                 android:paddingTop="@dimen/distanciamento_dezesseis"
                 android:paddingBottom="@dimen/distanciamento_oito"
-                android:textAllCaps="true"
                 android:text="@string/nome_time_a"
+                android:textAllCaps="true"
                 android:textColor="@color/color_texto_padrao"
                 android:textSize="@dimen/size_vinte_quatro_sp" />
 
@@ -104,8 +104,8 @@
                 android:padding="@dimen/distanciamento_oito"
                 android:text="@string/titulo_marcadores"
                 android:textAllCaps="true"
-                android:textSize="@dimen/size_vinte_quatro_sp"
-                android:textColor="@color/color_texto_padrao"/>
+                android:textColor="@color/color_texto_padrao"
+                android:textSize="@dimen/size_vinte_quatro_sp" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -119,8 +119,8 @@
                     android:paddingLeft="@dimen/distanciamento_quatro"
                     android:paddingRight="@dimen/distanciamento_quatro"
                     android:text="@string/nome_marcador_campo"
-                    android:textSize="@dimen/size_dezoito"
-                    android:textColor="@color/color_texto_padrao"/>
+                    android:textColor="@color/color_texto_padrao"
+                    android:textSize="@dimen/size_dezoito" />
 
                 <TextView
                     android:id="@+id/jogadores_campo_time_a"
@@ -143,8 +143,8 @@
                     android:paddingTop="@dimen/distanciamento_dez"
                     android:paddingRight="@dimen/distanciamento_quatro"
                     android:text="@string/nome_marcador_substituicao"
-                    android:textSize="@dimen/size_dezoito"
-                    android:textColor="@color/color_texto_padrao"/>
+                    android:textColor="@color/color_texto_padrao"
+                    android:textSize="@dimen/size_dezoito" />
 
                 <TextView
                     android:id="@+id/substituicoes_time_a"
@@ -179,8 +179,8 @@
                     android:paddingTop="@dimen/distanciamento_dez"
                     android:paddingRight="@dimen/distanciamento_quatro"
                     android:text="@string/nome_marcador_expulsos"
-                    android:textSize="@dimen/size_dezoito"
-                    android:textColor="@color/color_texto_padrao"/>
+                    android:textColor="@color/color_texto_padrao"
+                    android:textSize="@dimen/size_dezoito" />
 
                 <TextView
                     android:id="@+id/jogadores_expulsos_time_a"
@@ -218,10 +218,10 @@
                 android:gravity="center"
                 android:paddingTop="@dimen/distanciamento_dezesseis"
                 android:paddingBottom="@dimen/distanciamento_oito"
-                android:textAllCaps="true"
                 android:text="@string/nome_time_b"
-                android:textSize="@dimen/size_vinte_quatro_sp"
-                android:textColor="@color/color_texto_padrao"/>
+                android:textAllCaps="true"
+                android:textColor="@color/color_texto_padrao"
+                android:textSize="@dimen/size_vinte_quatro_sp" />
 
             <TextView
                 android:id="@+id/pontuacao_time_b"
@@ -299,8 +299,8 @@
                 android:padding="@dimen/distanciamento_oito"
                 android:text="@string/titulo_marcadores"
                 android:textAllCaps="true"
-                android:textSize="@dimen/size_vinte_quatro_sp"
-                android:textColor="@color/color_texto_padrao"/>
+                android:textColor="@color/color_texto_padrao"
+                android:textSize="@dimen/size_vinte_quatro_sp" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -314,8 +314,8 @@
                     android:paddingLeft="@dimen/distanciamento_quatro"
                     android:paddingRight="@dimen/distanciamento_quatro"
                     android:text="@string/nome_marcador_campo"
-                    android:textSize="@dimen/size_dezoito"
-                    android:textColor="@color/color_texto_padrao"/>
+                    android:textColor="@color/color_texto_padrao"
+                    android:textSize="@dimen/size_dezoito" />
 
                 <TextView
                     android:id="@+id/jogadores_campo_time_b"
@@ -338,8 +338,8 @@
                     android:paddingTop="@dimen/distanciamento_dez"
                     android:paddingRight="@dimen/distanciamento_quatro"
                     android:text="@string/nome_marcador_substituicao"
-                    android:textSize="@dimen/size_dezoito"
-                    android:textColor="@color/color_texto_padrao"/>
+                    android:textColor="@color/color_texto_padrao"
+                    android:textSize="@dimen/size_dezoito" />
 
                 <TextView
                     android:id="@+id/substituicoes_time_b"
@@ -374,8 +374,8 @@
                     android:paddingTop="@dimen/distanciamento_dez"
                     android:paddingRight="@dimen/distanciamento_quatro"
                     android:text="@string/nome_marcador_expulsos"
-                    android:textSize="@dimen/size_dezoito"
-                    android:textColor="@color/color_texto_padrao"/>
+                    android:textColor="@color/color_texto_padrao"
+                    android:textSize="@dimen/size_dezoito" />
 
                 <TextView
                     android:id="@+id/jogadores_expulsos_time_b"

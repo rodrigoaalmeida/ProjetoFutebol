@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-//    instanciação e inicialização das variaveis do visor.
+    //    instanciação e inicialização das variaveis do visor.
     int pontucaoTimeA = 0;
     int pontucaoTimeB = 0;
     int cartaoVermelhoTimeA = 0;
@@ -23,12 +23,12 @@ public class MainActivity extends AppCompatActivity {
     int substituicoesTimeB = 3;
     int jogadoresExpulsosTimeA = 0;
     int jogadoresExpulsosTimeB = 0;
-//    instanciação e inicialização das variaveis de contagem para regra de expulsão.
+    //    instanciação e inicialização das variaveis de contagem para regra de expulsão.
     int contCartaoAmareloTimeA = 0;
     int contSubstituicaoTimeA = 0;
     int contCartaoAmareloTimeB = 0;
     int contSubstituicaoTimeB = 0;
-//    instanciação das variaveis relacionadas a tela que seram utizadas mais de uma vez.
+    //    instanciação das variaveis relacionadas a tela que seram utizadas mais de uma vez.
     TextView empateView;
     TextView vencedorTimeAView;
     TextView vencedorTimeBView;
@@ -81,7 +81,8 @@ public class MainActivity extends AppCompatActivity {
         buttonSubstituicaoTimeB = findViewById(R.id.button_substituicao_time_b);
         buttonFimDeJogoView = findViewById(R.id.button_fim_jogo);
     }
-//    codigo do botão de reset
+
+    //    codigo do botão de reset
     public void buttonReset(View view) {
         pontucaoTimeA = 0;
         pontucaoTimeB = 0;
@@ -125,7 +126,8 @@ public class MainActivity extends AppCompatActivity {
         buttonFimDeJogoView.setEnabled(true);
         buttonFimDeJogoView.setVisibility(View.VISIBLE);
     }
-//    codigo do botão de fim de jogo
+
+    //    codigo do botão de fim de jogo
     public void buttonFimDeJogo(View view) {
         if (pontucaoTimeA > pontucaoTimeB) {
             vencedorTimeAView.setVisibility(View.VISIBLE);
@@ -138,7 +140,8 @@ public class MainActivity extends AppCompatActivity {
             situacaoButtonJogoEncerrado();
         }
     }
-//    codigo usado intenamente quando a partida é encerrada por pelo botão ou limite de expulsos.
+
+    //    codigo usado intenamente quando a partida é encerrada por pelo botão ou limite de expulsos.
     private void situacaoButtonJogoEncerrado() {
         buttonFimDeJogoView.setEnabled(false);
         buttonFimDeJogoView.setVisibility(View.INVISIBLE);
@@ -159,12 +162,14 @@ public class MainActivity extends AppCompatActivity {
         buttonSubstituicaoTimeB.setEnabled(false);
         buttonSubstituicaoTimeB.setVisibility(View.INVISIBLE);
     }
-//    codigo para adicionar pontos ao time A.
+
+    //    codigo para adicionar pontos ao time A.
     public void addPontosTimeA(View view) {
         pontucaoTimeA = pontucaoTimeA + 1;
         displayPontucaoTimeA(pontucaoTimeA);
     }
-//    codigo para adicionar cartão vermelho ao time A.
+
+    //    codigo para adicionar cartão vermelho ao time A.
     public void addCartaoVermelhoTimeA(View view) {
         cartaoVermelhoTimeA = cartaoVermelhoTimeA + 1;
         jogadoresTimeA = jogadoresTimeA - 1;
@@ -172,7 +177,8 @@ public class MainActivity extends AppCompatActivity {
         jogadoresCampoTimeA(jogadoresTimeA);
         displayCartaoVermelhoTimeA(cartaoVermelhoTimeA, jogadoresTimeA, jogadoresExpulsosTimeA);
     }
-//    codigo para adicionar cartão amarelo ao time A.
+
+    //    codigo para adicionar cartão amarelo ao time A.
     public void addCartaoAmareloTimeA(View view) {
         cartaoAmareloTimeA = cartaoAmareloTimeA + 1;
         contCartaoAmareloTimeA = contCartaoAmareloTimeA + 1;
@@ -186,7 +192,8 @@ public class MainActivity extends AppCompatActivity {
         jogadoresCampoTimeA(jogadoresTimeA);
         displayCartaoAmareloTimeA(cartaoAmareloTimeA, jogadoresTimeA, jogadoresExpulsosTimeA);
     }
-//    codigo usado no botão de substituição do time A.
+
+    //    codigo usado no botão de substituição do time A.
     public void substituicaoTimeA(View view) {
         substituicoesTimeA = substituicoesTimeA - 1;
         contCartaoAmareloTimeA = 0;
@@ -197,19 +204,22 @@ public class MainActivity extends AppCompatActivity {
             buttonSubstituicaoTimeA.setVisibility(View.INVISIBLE);
         }
     }
-//    codigo usado internamente para regra de fim de jogo por jogadores minimos em campo no time A.
+
+    //    codigo usado internamente para regra de fim de jogo por jogadores minimos em campo no time A.
     private void jogadoresCampoTimeA(int jogadores) {
         if (jogadores == 6) {
             situacaoButtonJogoEncerrado();
             vencedorTimeBView.setVisibility(View.VISIBLE);
         }
     }
-//    mostra a pontuação do time A.
+
+    //    mostra a pontuação do time A.
     public void displayPontucaoTimeA(int pontos) {
         TextView pontuacaoTimeAView = (TextView) findViewById(R.id.pontuacao_time_a);
         pontuacaoTimeAView.setText(String.valueOf(pontos));
     }
-//    codigo para atualizar os cartões vermelhos, jogadores em campo e jogadores expulsos do time A.
+
+    //    codigo para atualizar os cartões vermelhos, jogadores em campo e jogadores expulsos do time A.
     public void displayCartaoVermelhoTimeA(int cartaoVermelho, int jogadoresCampo, int jogadoresExpulsos) {
         TextView cartaoVermelhoTimeAView = (TextView) findViewById(R.id.cartao_vermelho_time_a);
         TextView jogadoresTimeAView = (TextView) findViewById(R.id.jogadores_campo_time_a);
@@ -218,12 +228,14 @@ public class MainActivity extends AppCompatActivity {
         jogadoresExpulsosTimeAView.setText(String.valueOf(jogadoresExpulsos));
         cartaoVermelhoTimeAView.setText(String.valueOf(cartaoVermelho));
     }
-//    codigo para mostrar os cartões vermelhos do time A.
+
+    //    codigo para mostrar os cartões vermelhos do time A.
     public void displayCartaoVermelhoTimeA(int cartaoVermelho) {
         TextView cartaoVermelhoTimeAView = (TextView) findViewById(R.id.cartao_vermelho_time_a);
         cartaoVermelhoTimeAView.setText(String.valueOf(cartaoVermelho));
     }
-//    codigo para mostrar e atualizar os cartões amarelos, jogadores em campo e jogadores expulsos do time A.
+
+    //    codigo para mostrar e atualizar os cartões amarelos, jogadores em campo e jogadores expulsos do time A.
     public void displayCartaoAmareloTimeA(int cartaoAmarelo, int jogadoresCampo, int jogadoresExpulsos) {
         TextView cartaoAmareloTimeAView = (TextView) findViewById(R.id.cartao_amarelo_time_a);
         TextView jogadoresTimeAView = (TextView) findViewById(R.id.jogadores_campo_time_a);
@@ -232,7 +244,8 @@ public class MainActivity extends AppCompatActivity {
         jogadoresExpulsosTimeAView.setText(String.valueOf(jogadoresExpulsos));
         cartaoAmareloTimeAView.setText(String.valueOf(cartaoAmarelo));
     }
-//    codigo para mostrar o numero de substituições disponiveis para o time A.
+
+    //    codigo para mostrar o numero de substituições disponiveis para o time A.
     private void displaySubstituicoesTimeA(int substituicao) {
         TextView substituicaoTimeAView = (TextView) findViewById(R.id.substituicoes_time_a);
         substituicaoTimeAView.setText(String.valueOf(substituicao));
@@ -246,7 +259,8 @@ public class MainActivity extends AppCompatActivity {
         pontucaoTimeB = pontucaoTimeB + 1;
         displayPontucaoTimeB(pontucaoTimeB);
     }
-//    codigo para adicionar cartão vermelho ao time B.
+
+    //    codigo para adicionar cartão vermelho ao time B.
     public void addCartaoVermelhoTimeB(View view) {
         cartaoVermelhoTimeB = cartaoVermelhoTimeB + 1;
         jogadoresTimeB = jogadoresTimeB - 1;
@@ -254,7 +268,8 @@ public class MainActivity extends AppCompatActivity {
         jogadoresCampoTimeB(jogadoresTimeB);
         displayCartaoVermelhoTimeB(cartaoVermelhoTimeB, jogadoresTimeB, jogadoresExpulsosTimeB);
     }
-//    codigo para adicionar cartão amarelo ao time B.
+
+    //    codigo para adicionar cartão amarelo ao time B.
     public void addCartaoAmareloTimeB(View view) {
         cartaoAmareloTimeB = cartaoAmareloTimeB + 1;
         contCartaoAmareloTimeB = contCartaoAmareloTimeB + 1;
@@ -268,7 +283,8 @@ public class MainActivity extends AppCompatActivity {
         jogadoresCampoTimeB(jogadoresTimeB);
         displayCartaoAmareloTimeB(cartaoAmareloTimeB, jogadoresTimeB, jogadoresExpulsosTimeB);
     }
-//    codigo usado no botão de substituição do time B.
+
+    //    codigo usado no botão de substituição do time B.
     public void substituicaoTimeB(View view) {
         substituicoesTimeB = substituicoesTimeB - 1;
         contCartaoAmareloTimeB = 0;
@@ -279,19 +295,22 @@ public class MainActivity extends AppCompatActivity {
             buttonSubstituicaoTimeB.setVisibility(View.INVISIBLE);
         }
     }
-//    codigo usado internamente para regra de fim de jogo por jogadores minimos em campo no time B.
+
+    //    codigo usado internamente para regra de fim de jogo por jogadores minimos em campo no time B.
     private void jogadoresCampoTimeB(int jogadores) {
         if (jogadores == 6) {
             situacaoButtonJogoEncerrado();
             vencedorTimeAView.setVisibility(View.VISIBLE);
         }
     }
-//    mostra a pontuação do time B.
+
+    //    mostra a pontuação do time B.
     public void displayPontucaoTimeB(int pontos) {
         TextView pontuacaoTimeBView = (TextView) findViewById(R.id.pontuacao_time_b);
         pontuacaoTimeBView.setText(String.valueOf(pontos));
     }
-//    codigo para atualizar os cartões vermelhos, jogadores em campo e jogadores expulsos do time B.
+
+    //    codigo para atualizar os cartões vermelhos, jogadores em campo e jogadores expulsos do time B.
     public void displayCartaoVermelhoTimeB(int cartaoVermelho, int jogadoresCampo, int jogadoresExpulsos) {
         TextView cartaoVermelhoTimeBView = (TextView) findViewById(R.id.cartao_vermelho_time_b);
         TextView jogadoresTimeBView = (TextView) findViewById(R.id.jogadores_campo_time_b);
@@ -300,12 +319,14 @@ public class MainActivity extends AppCompatActivity {
         jogadoresExpulsosTimeBView.setText(String.valueOf(jogadoresExpulsos));
         cartaoVermelhoTimeBView.setText(String.valueOf(cartaoVermelho));
     }
-//    codigo para mostrar os cartões vermelhos do time B.
+
+    //    codigo para mostrar os cartões vermelhos do time B.
     public void displayCartaoVermelhoTimeB(int cartaoVermelho) {
         TextView cartaoVermelhoTimeBView = (TextView) findViewById(R.id.cartao_vermelho_time_b);
         cartaoVermelhoTimeBView.setText(String.valueOf(cartaoVermelho));
     }
-//    codigo para mostrar e atualizar os cartões amarelos, jogadores em campo e jogadores expulsos do time B.
+
+    //    codigo para mostrar e atualizar os cartões amarelos, jogadores em campo e jogadores expulsos do time B.
     public void displayCartaoAmareloTimeB(int cartaoAmarelo, int jogadoresCampo, int jogadoresExpulsos) {
         TextView cartaoAmareloTimeBView = (TextView) findViewById(R.id.cartao_amarelo_time_b);
         TextView jogadoresTimeBView = (TextView) findViewById(R.id.jogadores_campo_time_b);
@@ -314,7 +335,8 @@ public class MainActivity extends AppCompatActivity {
         jogadoresExpulsosTimeBView.setText(String.valueOf(jogadoresExpulsos));
         cartaoAmareloTimeBView.setText(String.valueOf(cartaoAmarelo));
     }
-//    codigo para mostrar o numero de substituições disponiveis para o time B.
+
+    //    codigo para mostrar o numero de substituições disponiveis para o time B.
     private void displaySubstituicoesTimeB(int substituicao) {
         TextView substituicaoTimeBView = (TextView) findViewById(R.id.substituicoes_time_b);
         substituicaoTimeBView.setText(String.valueOf(substituicao));

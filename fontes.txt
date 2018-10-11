@@ -1,0 +1,23 @@
+botão personalizado
+https://www.treinaweb.com.br/blog/criando-um-botao-customizado-no-android-via-xml/
+http://respostas.guj.com.br/24996-mudando-a-cor-do-botao-e-mostrar-evidente-o-click
+http://respostas.guj.com.br/9760-botao-com-efeito-de-pressionado
+
+Mudança de cor na actionbar
+https://pt.stackoverflow.com/questions/45263/mudando-cor-da-actionbar-no-style
+
+comentarios em xml
+https://www.tutorialspoint.com/pg/xml/xml_comments.htm
+
+Regras do futebol
+Fonte: livro de regras de futebol 2016/2017 cbf
+https://www.cbf.com.br/a-cbf/biblioteca/index/livro-de-regras-de-futebol-2016-2017-portugues
+
+cartões:
+ um cartão vermelho espussa o jogador de campo;
+ a cada dois cartões amerelos para um mesmo jogador tem o peso de um vermelho, espusando também ele de campo.
+
+jogadores:
+partidas com 11 jogadores, não pode continuar se não tiver no minimo 7 jogadores;
+até no maximo tres substituições por partida;
+jogadores expulsos não podem ser substituidos.
